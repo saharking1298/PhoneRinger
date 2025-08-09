@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+
+{% block title %} Manage Users {% endblock %}
+{% block content %}
+
+
+{% for user in users %}
+  <div class="flex justify-between rounded-sm bg-orange-100 p-2 mb-2">
+    <span> {{ user.name }} {{ "(Default)" if selected_user == user.id else "" }}</span>
+    <span>
+      <span class="underline cursor-pointer text-blue-500 mx-2" onclick="setDefaultUser(`{{user['id']}}`)">Set Default</span>
+      <a href="/users/{{user['id']}}/edit" class="underline cursor-pointer text-blue-500 mr-2">Edit</a>
+      <a href="/users/{{user['id']}}/delete" class="underline cursor-pointer text-blue-500">Delete</a>
+    </span>
+  </div>
+{% endfor %}
+
+<a href="/users/new">
+  <button class="btn btn-block bg-orange-100"> <b>+</b> Add User </button>
+</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Edit User {% endblock %}
+{% block content %}
+<p class="text-center text-xl"> Editing user '{{ user["name"] }}': </p>
+<div class="my-2">
+  <label for="username"> Username: </label>
+  <input class="input block" type="text" name="name" id="username" value="{{user["name"]}}">
+</div class="mb-2">
+  <div>
+  <label for="token"> PushBullet API Token: </label>
+  <input class="input block" type="text" name="name" id="token" value="{{user["token"]}}">
+</div>
+<button class="btn btn-success block mx-auto mt-2" onclick="updateUser(`{{user['id']}}`)"> Save Changed </button>
+<a href="/">
+  <button class="btn btn-info block mx-auto mt-2"> Go Back </button>
+</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} Delete User {% endblock %}
+{% block content %}
+
+<p class="text-center text-xl"> Are you sure about deleting '{{ user["name"] }}'? </p>
+<div class="flex flex-col gap-2 mt-4 max-w-md mx-auto">
+  <button class="btn btn-error mb-2" onclick="deleteUser(`{{user['id']}}`)"> Delete User </button>
+  <a href="/">
+    <button class="btn btn-success block w-full"> Go Back </button>
+  </a>
+</div>
+{% endblock %}

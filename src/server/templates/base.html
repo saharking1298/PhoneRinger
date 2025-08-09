@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/static/js/utils.js"></script>
+    <link rel="stylesheet" href="/static/css/base.css" />
+    <title>Phone Ringer</title>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div
+      class="w-full fixed top-0 left-0 bg-orange-400 flex justify-center items-center h-12 z-50"
+    >
+      <span class="text-2xl font-bold">Phone Ringer</span>
+    </div>
+    <div class="w-[90%] mx-auto mt-16">
+      <div
+        class="w-full flex items-center justify-center mb-2 h-8 bg-orange-400 rounded-sm"
+      >
+        {% block title %} {% endblock %}
+      </div>
+      {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
