@@ -5,7 +5,7 @@ import time
 import os
 
 
-config_path = os.path.join("data", "config.json")
+config_path = os.path.join(os.path.dirname(__file__),  "data", "config.json")
 
 
 def get_token():
